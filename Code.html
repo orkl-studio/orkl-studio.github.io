@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orkl · Orange Town</title>
+    <meta name="description" content="orkl — 独立游戏开发者，正在开发 Orange Town">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 自定义光标 -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- 滚动进度条 -->
+    <div id="scroll-progress"></div>
+
+    <!-- 导航栏 -->
+    <nav id="navbar">
+        <div class="nav-brand">
+            <span class="brand-logo">◆</span>
+            <span class="brand-name">orkl</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#work" class="active">作品</a></li>
+            <li><a href="#lab">实验室</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#journey">旅程</a></li>
+            <li><a href="#devlog">开发日志</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            <span class="status-text">开放合作</span>
+        </div>
+    </nav>
+
+    <!-- 主容器 -->
+    <main id="app">
+
+        <!-- 板块 0: Hero -->
+        <section class="panel hero" id="hero" data-index="0">
+            <canvas id="starfield"></canvas>
+            <div class="grid-bg"></div>
+            <div class="hero-content">
+                <div class="hero-label">orkl的个人网站</div>
+                <h1 class="hero-title">在创意的星河中<br>划出一道橙色的光</h1>
+                <p class="hero-subtitle">游戏创作 · 玩法设计 · 场景搭建 · 像素艺术</p>
+                <div class="hero-actions">
+                    <a href="#work" class="btn-primary">查看作品</a>
+                    <a href="#devlog" class="btn-secondary">开发日志</a>
+                </div>
+            </div>
+            <div class="hero-scroll-hint">
+                <span>滚动探索</span>
+                <div class="scroll-arrow">↓</div>
+            </div>
+            <div class="hero-glow"></div>
+        </section>
+
+        <!-- 板块 1: 作品 -->
+        <section class="panel work" id="work" data-index="1">
+            <div class="panel-header">
+                <span class="panel-number">01</span>
+                <h2 class="panel-title">精选作品</h2>
+                <p class="panel-desc">每一个项目都是一次旅程</p>
+            </div>
+            <div class="project-grid">
+
+                <div class="project-card" data-tilt>
+                    <div class="card-visual">
+                        <div class="card-placeholder" style="background: linear-gradient(135deg, #1a0e05, #2d1608);">
+                            <div class="placeholder-content">
+                                <span class="placeholder-icon">🎮</span>
+                                <span class="placeholder-text">Orange Town 截图</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">落日镇</h3>
+                        <div class="card-tags">
+                            <span class="tag">UE5</span>
+                            <span class="tag">生存</span>
+                            <span class="tag">塔防</span>
+                            <span class="tag">单机</span>
+                        </div>
+                        <p class="card-desc">类绝地求生风格与塔防融合的单机生存游戏。移动、动画、背包、瞄准偏移、武器系统高度复刻，玩法与地图自行设计。</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-tilt>
+                    <div class="card-visual">
+                        <div class="card-placeholder" style="background: linear-gradient(135deg, #0d1b2a, #1b263b);">
+                            <div class="placeholder-content">
+                                <span class="placeholder-icon">⚔️</span>
+                                <span class="placeholder-text">像素射击 Demo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">真枪实弹</h3>
+                        <div class="card-tags">
+                            <span class="tag">Godot</span>
+                            <span class="tag">GDScript</span>
+                            <span class="tag">像素艺术</span>
+                        </div>
+                        <p class="card-desc">一款横版像素风射击 Demo，使用 Godot 引擎与 GDScript 编写，自制帧动画与视差背景。</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-tilt>
+                    <div class="card-visual">
+                        <div class="card-placeholder" style="background: linear-gradient(135deg, #1b1b3a, #2d2b55);">
+                            <div class="placeholder-content">
+                                <span class="placeholder-icon">🎨</span>
+                                <span class="placeholder-text">概念设计</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">美术与概念设计</h3>
+                        <div class="card-tags">
+                            <span class="tag">Blender</span>
+                            <span class="tag">Substance</span>
+                            <span class="tag">工业设计</span>
+                        </div>
+                        <p class="card-desc">从角色到场景，从材质到灯光。融合工业设计思维与游戏美术，追求每一帧的视觉品质。</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 板块 2: 实验室 -->
+        <section class="panel lab" id="lab" data-index="2">
+            <div class="panel-header">
+                <span class="panel-number">02</span>
+                <h2 class="panel-title">实验室</h2>
+                <p class="panel-desc">灵感碎片 · 技术试验 · 奇思妙想</p>
+            </div>
+            <div class="lab-grid">
+                <div class="lab-item">
+                    <div class="lab-visual" style="background: linear-gradient(135deg, #2d3436, #636e72);">
+                        <span class="lab-icon">🔫</span>
+                    </div>
+                    <h4>武器系统</h4>
+                    <p>95% 复刻绝地求生武器手感</p>
+                </div>
+                <div class="lab-item">
+                    <div class="lab-visual" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">
+                        <span class="lab-icon">🎯</span>
+                    </div>
+                    <h4>瞄准偏移</h4>
+                    <p>基于骨骼的精确瞄准系统</p>
+                </div>
+                <div class="lab-item">
+                    <div class="lab-visual" style="background: linear-gradient(135deg, #e17055, #fab1a0);">
+                        <span class="lab-icon">🎒</span>
+                    </div>
+                    <h4>背包系统</h4>
+                    <p>根据绝地求生独立制作的完整 UI</p>
+                </div>
+                <div class="lab-item">
+                    <div class="lab-visual" style="background: linear-gradient(135deg, #00b894, #55efc4);">
+                        <span class="lab-icon">🚗</span>
+                    </div>
+                    <h4>汽车渲染</h4>
+                    <p>Blender 高精度跑车渲染</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块 3: 关于 -->
+        <section class="panel about" id="about" data-index="3">
+            <div class="panel-header">
+                <span class="panel-number">03</span>
+                <h2 class="panel-title">关于我</h2>
+                <p class="panel-desc">从代码到世界</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>我是 <strong>orkl</strong>，一名 18 岁的独立游戏开发者，已有三年开发经验。</p>
+                    <p>热爱游戏，热爱艺术，游历过数十个不同国家的艺术场馆，希望在第九艺术的时代也做出属于我的一份贡献。对于硬核生存、一三人称射击、拟真赛车、3A开放世界等类型的数百款游戏大作有着数千小时的体验，有着完整游戏demo制作与调试的经验，从地平线5、看门狗2对我的游戏启蒙，到PUBG、Dayz对于我自制游戏的启发，让我对各种现代艺术形式与游戏的玩法有深刻的理解。从工业设计到游戏开发，从场景搭建、渲染到动画，从 AI 到美术设计——我将这些多元技能融入每一行代码和每一个模型。</p>
+                    <p>orkl 这个名称，是小时候无意间想到的，取自 "Orange Killer" 的简写，它陪伴我从零开始走到今天。</p>
+                </div>
+                <div class="skills-section">
+                    <h4 class="skills-title">核心技能</h4>
+
+                    <div class="skill-bar">
+                        <div class="skill-label">虚幻引擎 4 & 5</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:95%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">蓝图设计与编写</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:88%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">动画优化 & IK 系统</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:90%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">UI 设计</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:90%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">Godot 引擎</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:85%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">像素帧动画</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:85%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">视差背景设计</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:85%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">Pygame</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:80%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">Blender 渲染</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:85%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">美术设计</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:90%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">玩法分析</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:90%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">SolidWorks & 工业设计</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:80%"></div></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-label">游戏 Mod 制作</div>
+                        <div class="skill-track"><div class="skill-fill" style="--fill:50%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块 4: 旅程 -->
+        <section class="panel journey" id="journey" data-index="4">
+            <div class="panel-header">
+                <span class="panel-number">04</span>
+                <h2 class="panel-title">开发旅程</h2>
+                <p class="panel-desc">时间线上的足迹</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">更早</div>
+                    <h4>技术积累</h4>
+                    <p>学习编程基础，接触工业设计与美术，为日后的游戏开发打下根基</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">2023</div>
+                    <h4>启程</h4>
+                    <p>正式成为独立游戏开发者，开始系统性学习与开发</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">2024</div>
+                    <h4>像素 Demo</h4>
+                    <p>完成像素风横版射击 Demo，掌握 Godot 与 GDScript，积累蓝图与系统编程经验</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">2025</div>
+                    <h4>Orange Town 启动</h4>
+                    <p>启动 Orange Town 项目，完成移动、动画、背包、瞄准偏移、武器系统</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">2026 · 今</div>
+                    <h4>持续进化</h4>
+                    <p>自行设计玩法与地图，持续优化 Orange Town，筹备公开测试</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 板块 5: 开发日志 -->
+        <section class="panel devlog" id="devlog" data-index="5">
+            <div class="panel-header">
+                <span class="panel-number">05</span>
+                <h2 class="panel-title">开发日志</h2>
+                <p class="panel-desc">记录思考、踩坑与突破</p>
+            </div>
+            <div class="devlog-list">
+                <article class="devlog-item">
+                    <div class="devlog-meta">
+                        <span class="devlog-date">待添加</span>
+                    </div>
+                    <h4 class="devlog-title">[ 标题待添加 ]</h4>
+                    <p class="devlog-excerpt">[ 摘要待添加 ]</p>
+                </article>
+                <article class="devlog-item">
+                    <div class="devlog-meta">
+                        <span class="devlog-date">待添加</span>
+                    </div>
+                    <h4 class="devlog-title">[ 标题待添加 ]</h4>
+                    <p class="devlog-excerpt">[ 摘要待添加 ]</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 板块 6: 联系 -->
+        <section class="panel contact" id="contact" data-index="6">
+            <div class="contact-content">
+                <h2 class="contact-headline">一起创造</h2>
+                <p class="contact-sub">无论是合作、交流还是单纯聊聊游戏，我都欢迎</p>
+                <a href="mailto:roy-chenglinl@outlook.com" class="btn-contact">发送邮件</a>
+                <div class="social-links">
+                    <a href="https://b23.tv/1RzSPaV" target="_blank" rel="noopener">Bilibili</a>
+                    <a href="#" target="_blank" rel="noopener">GitHub</a>
+                    <a href="#" target="_blank" rel="noopener">itch.io</a>
+                </div>
+            </div>
+            <footer class="site-footer">
+                <p>© 2026 orkl · Orange Town · 在创意的星河中划出一道橙色的光</p>
+            </footer>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
